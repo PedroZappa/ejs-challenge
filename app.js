@@ -14,7 +14,9 @@ const app = express();
 // EJS
 app.set('view engine', 'ejs');
 // bodyParser
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 // Static Folder
 app.use(express.static("public"));
 
@@ -24,19 +26,25 @@ app.use(express.static("public"));
 // Home \\
 app.get("/", (req, res) => {
 
-  res.render("home", {content: homeStartingContent});
+  res.render("home", {
+    content: homeStartingContent
+  });
 });
 
 // About \\
 app.get("/about", (req, res) => {
 
-  res.render("about", {content: aboutContent});
+  res.render("about", {
+    content: aboutContent
+  });
 });
 
 // Contact \\
 app.get("/contact", (req, res) => {
 
-  res.render("contact", {content: contactContent});
+  res.render("contact", {
+    content: contactContent
+  });
 });
 
 // Compose \\
@@ -46,7 +54,10 @@ app.get("/compose", (req, res) => {
 });
 
 app.post("/compose", (req, res) => {
-  console.log(req.body.composePostTitle);
+  const post = {
+    title: req.body.postTitle,
+    content: req.body.postBody
+  };
 
 });
 
