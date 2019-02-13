@@ -1,9 +1,22 @@
 <%- include("partials/header") -%>
 
 
-
 <h1>Home</h1>
-<p> <%= content %> </p>
+<p>
+  <%= content %>
+</p>
+
+<!-- add for loop to loop through array -->
+
+<% for (i=0; i<posts.length; i++) { %>
+<h3>
+  <%= posts[i].title %>
+</h3>
+<p>
+  <%= posts[i].content %>
+</p>
+<% }; %>
+
 
 
 
