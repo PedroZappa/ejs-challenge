@@ -24,7 +24,19 @@ app.use(express.static("public"));
 // Home \\
 app.get("/", (req, res) => {
 
-  res.render("home", {homeStartingContent});
+  res.render("home", {content: homeStartingContent});
+});
+
+// About \\
+app.get("/about", (req, res) => {
+
+  res.render("about", {content: aboutContent});
+});
+
+// Contact \\
+app.get("/contact", (req, res) => {
+
+  res.render("contact", {content: contactContent});
 });
 
 
@@ -32,12 +44,7 @@ app.get("/", (req, res) => {
 
 
 
-
-
-
-
-
-
+// Server Port \\
 app.listen(3000, function() {
   console.log("Server started on port 3000");
 });
