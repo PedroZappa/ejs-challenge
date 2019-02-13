@@ -8,13 +8,21 @@
 
 <!-- add for loop to loop through array -->
 
+<% posts.forEach(function(element) { %>
+  <h3>
+    <%= element.title %>
+  </h3>
+  <p>
+    <%= element.content %>
+  </p>
+<% }); %>
+
+
+
+
+
 <% for (i=0; i<posts.length; i++) { %>
-<h3>
-  <%= posts[i].title %>
-</h3>
-<p>
-  <%= posts[i].content %>
-</p>
+
 <% }; %>
 
 
