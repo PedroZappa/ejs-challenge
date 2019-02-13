@@ -19,6 +19,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
+// ROUTING \\
+
+// Home \\
+app.get("/", (req, res) => {
+
+  res.render("home", {homeStartingContent});
+});
 
 
 
