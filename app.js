@@ -64,6 +64,18 @@ app.post("/compose", (req, res) => {
   res.redirect("/");
 });
 
+// Entries
+app.get("/posts/:postName", (req, res) => {
+  const requestedTitle = req.params.postName;
+  console.log(requestedTitle);
+
+  // if (requestedTitle === urlName) {
+  //   console.log("MATCH!");
+  // }
+
+  res.send(req.params);
+});
+
 
 // Server Port \\
 app.listen(3000, function() {
