@@ -76,17 +76,13 @@ app.get("/posts/:postName", (req, res) => {
   posts.forEach(function(post) {
     const storedTitle = _.kebabCase(post.title);
     if (storedTitle === requestedTitle) {
-      console.log("MATCH found dude");
-    } else {
-      console.log("Not a MATCH dude");
+      res.render("post", {
+        title: post.title,
+        content: post.content
+      });
     }
   });
 
-  // kebabCase
-
-
-
-  res.send(req.params);
 });
 
 
