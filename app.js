@@ -68,7 +68,7 @@ app.post("/compose", (req, res) => {
   res.redirect("/");
 });
 
-// Entries
+// Entrie Pages
 app.get("/posts/:postName", (req, res) => {
   const requestedTitle = _.kebabCase(req.params.postName);
 
